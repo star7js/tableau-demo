@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import "./App.css";
+import { TableauEmbed } from "@stoddabr/react-tableau-embed-live";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    return (
+        <div
+            className="App"
+            style={{
+                alignItems: "center",
+                display: "flex",
+                justifyContent: "center",
+                flexDirection: "column",
+            }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+            <h1>The Tableau Embedded API v3</h1>
+            <h3>Now more lightweight, and backwards compatible!</h3>
+            <TableauEmbed
+                sourceUrl="https://public.tableau.com/views/WorldIndicators/GDPpercapita"
+                width="1000px"
+                height="1000px"
+                options={{
+                    device: "desktop",
+                }}
+            />
+        </div>
+    );
 }
-
 export default App;
